@@ -1,90 +1,66 @@
-/* Estilos gerais */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #141414;
-    color: white;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rezzy3 - Impulsione Seu Instagram</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-header {
-    background-color: #e50914;
-    padding: 20px;
-    font-size: 24px;
-}
+    <!-- Vídeo de fundo -->
+    <div class="video-container">
+        <iframe id="video-bg" src="https://www.youtube.com/embed/D_0d2kY7lP4?autoplay=1&mute=1&loop=1&playlist=D_0d2kY7lP4&controls=0" frameborder="0" allowfullscreen></iframe>
+        <button id="toggle-audio">Ativar Som</button>
+    </div>
 
-button {
-    background-color: white;
-    color: #e50914;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-}
+    <header>
+        <h1>Rezzy3 - Impulsione Seu Instagram</h1>
+    </header>
 
-button:hover {
-    background-color: #ff0a16;
-    color: white;
-}
+    <section class="planos">
+        <h2>🔥 Planos e Benefícios</h2>
+        <table>
+            <tr>
+                <th>📦 Pacote</th>
+                <th>🎁 Benefícios</th>
+                <th>💰 Preço</th>
+            </tr>
+            <tr>
+                <td>Iniciante</td>
+                <td>Acesso básico + suporte</td>
+                <td>R$ XX</td>
+            </tr>
+            <tr>
+                <td>Avançado</td>
+                <td>Suporte VIP + aulas extras</td>
+                <td>R$ XX</td>
+            </tr>
+            <tr>
+                <td>Premium</td>
+                <td>Todos os benefícios + call semanal</td>
+                <td>R$ XX</td>
+            </tr>
+        </table>
+    </section>
 
-/* Estilo do vídeo */
-.video-container {
-    position: relative;
-    width: 100%;
-    padding-top: 56.25%; /* Proporção 16:9 */
-}
+    <footer>
+        <a href="https://www.youtube.com/channel/SEUCANAL" class="btn youtube">📺 YouTube</a>
+        <a href="https://www.instagram.com/SEUINSTAGRAM" class="btn instagram">📸 Instagram</a>
+        <a href="https://wa.me/SEUNUMERO" class="btn whatsapp">💬 WhatsApp</a>
+    </footer>
 
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
+    <script>
+        document.getElementById("toggle-audio").addEventListener("click", function() {
+            var iframe = document.getElementById("video-bg");
+            var src = iframe.src;
+            if (src.includes("mute=1")) {
+                iframe.src = src.replace("mute=1", "mute=0");
+            } else {
+                iframe.src = src.replace("mute=0", "mute=1");
+            }
+        });
+    </script>
 
-/* Estilos da tabela */
-.planos {
-    margin: 20px auto;
-    width: 80%;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: #222;
-    margin-top: 20px;
-}
-
-table, th, td {
-    border: 1px solid #444;
-    padding: 15px;
-    text-align: center;
-}
-
-th {
-    background-color: #e50914;
-    color: white;
-}
-
-td {
-    color: white;
-}
-
-/* Links no rodapé */
-footer {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #222;
-}
-
-footer a {
-    color: #e50914;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
+</body>
+</html>
